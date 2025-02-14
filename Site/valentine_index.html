@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veux-tu être ma Valentine ?</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .heart-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            opacity: 0.3;
+        }
+        .heart {
+    position: absolute;
+    width: 200px; /* Réduction de la taille pour mieux s'intégrer */
+    height: 200px;
+    background-color: red;
+    display: inline-block;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 90px rgba(0, 0, 0, 0.2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%) rotate(-45deg);
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -100px;
+    left: 0;
+}
+
+.heart::after {
+    left: 100px;
+    top: 0;
+}
+        .question {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <audio id="miawSound" src="miawmiaw.mp3"></audio>
+<div style="text-align: center; margin-top: 20px;">
+    <button onclick="document.getElementById('miawSound').play()" 
+            style="padding: 10px 20px; font-size: 18px; background-color: pink; border: none; border-radius: 5px; cursor: pointer;">
+        Clique ici avant de donner ta réponse. 🥹
+    </button>
+</div>
+    <div class="question">Veux-tu être ma Valentine ??</div>
+    <div class="buttons">
+        <button onclick="window.location.href='valentine_yes.html'">Oui</button>
+        <button onclick="window.location.href='valentine_no.html'">Non</button>
+    </div>
+    
+    <div class="image-container">
+        <img id="catGif" src="chat.jpeg" alt="Chat suppliant" width="300">
+    </div>
+</body>
+</html>
